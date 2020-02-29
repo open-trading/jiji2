@@ -1,0 +1,36 @@
+
+import Observable  from "../utils/observable"
+
+const MENU_ITEMS = [
+  { route: "/",           text: "ホーム",   iconClassName: "md-home" },
+
+  { type:  "header",         text: "リアルトレード" },
+  { route: "/rmt/trading-summary", text: "Trading conditions",         iconClassName: "md-account-balance" },
+  { route: "/rmt/chart",           text: "chart",         iconClassName: "md-trending-up" },
+  { route: "/rmt/positions",       text: "Open Interest List",         iconClassName: "md-list" },
+  { route: "/rmt/agent-setting",   text: "Agent setting",  iconClassName: "md-group-add" },
+  { route: "/rmt/logs",            text: "Journal",            iconClassName: "md-format-align-left" },
+
+  { type:  "header",         text: "Back test" },
+  { route: "/backtests/new",       text: "Creating a test", iconClassName: "md-add-circle-outline" },
+  { route: "/backtests/list",      text: "Test list",   iconClassName: "md-history" },
+
+  { type:  "header"  },
+  { route: "/notifications",       text: "Notification list",     iconClassName: "md-notifications" },
+  { route: "/agents",              text: "Agents", iconClassName: "md-group" },
+
+  { type:  "header", text: "" },
+  { route: "/settings",    text: "Settings",              iconClassName: "md-settings" },
+
+  { route: "/login",               text: "Se connecter", fullscreen: true, hidden: true },
+  { route: "/initial-settings",    text: "Initial settings", fullscreen: true, hidden: true },
+  { route: "/billing",             text: "Facturation", fullscreen: true, hidden: true }
+];
+
+export default class Navigator extends Observable {
+
+  menuItems() {
+    return MENU_ITEMS;
+  }
+
+}
